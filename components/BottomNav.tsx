@@ -5,6 +5,7 @@ import Icon from "./Icon";
 
 export default function BottomNav() {
   const path = usePathname() || "/";
+  if (path === "/login") return null;
   const onHome = path === "/";
   const onLearn =
     path.startsWith("/matematika") || path.startsWith("/ipa") || path.startsWith("/latihan");

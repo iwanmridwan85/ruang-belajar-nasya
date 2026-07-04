@@ -847,6 +847,95 @@ h3 {
   line-height: 1.6;
 }
 
+/* ---------- Login ---------- */
+.login-wrap {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px calc(40px + env(safe-area-inset-bottom));
+  gap: 16px;
+}
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--panel);
+  border: 1px solid var(--line2);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg, 0 20px 50px rgba(0, 0, 0, 0.5));
+  padding: 30px 24px 26px;
+  text-align: center;
+}
+.login-logo {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 16px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: #06121e;
+  background: linear-gradient(135deg, var(--cy), var(--vi));
+  box-shadow: 0 0 30px -6px var(--vi);
+}
+.login-card h1 {
+  font-size: 22px;
+  background: linear-gradient(90deg, #7ef0ff, #c4a8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.login-card p {
+  color: var(--soft);
+  font-size: 13.5px;
+  margin: 6px 0 20px;
+}
+.login-card input {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.login-card input:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--cy) 55%, var(--line));
+}
+.login-card input::placeholder {
+  color: var(--soft);
+  letter-spacing: normal;
+}
+.login-err {
+  color: var(--no);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.login-foot {
+  color: var(--soft);
+  font-size: 12px;
+}
+.logout-btn {
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  color: var(--soft);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.logout-btn:active {
+  transform: scale(0.97);
+}
+
 /* ---------- Install PWA button ---------- */
 .install-cta {
   display: flex;

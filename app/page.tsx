@@ -5,6 +5,7 @@ import ContinueCard from "@/components/ContinueCard";
 import TodaySchedule from "@/components/TodaySchedule";
 import StarBadge from "@/components/StarBadge";
 import InstallButton from "@/components/InstallButton";
+import LogoutButton from "@/components/LogoutButton";
 import Icon from "@/components/Icon";
 
 export default function Home() {
@@ -82,6 +83,12 @@ export default function Home() {
         <br />
         Materi dari Buku Siswa Kemdikbud Kelas VII.
       </p>
+
+      {!!process.env.APP_PASSWORD && (
+        <div style={{ textAlign: "center", marginBottom: 8 }}>
+          <LogoutButton />
+        </div>
+      )}
     </main>
   );
 }
