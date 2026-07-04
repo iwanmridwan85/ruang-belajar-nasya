@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "Belajar interaktif Kelas 7 SMP dengan Guru AI yang menuntun cara berpikir, bukan memberi jawaban.",
   manifest: "/manifest.json",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Ruang Belajar" },
+  appleWebApp: { capable: true, statusBarStyle: "default", title: "Ruang Belajar" },
   icons: {
     icon: [
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#060912",
+  themeColor: "#f7f9fd",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
