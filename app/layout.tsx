@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import BottomNav from "@/components/BottomNav";
 import RegisterSW from "@/components/RegisterSW";
+import ZoomChrome from "@/components/ZoomChrome";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="shell">{children}</div>
         <BottomNav />
         <RegisterSW />
+        <ZoomChrome />
       </body>
     </html>
   );

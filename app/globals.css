@@ -596,6 +596,18 @@ h3 {
   transform: scale(0.96);
 }
 
+/* Saat halaman di-zoom (baca halaman buku), sembunyikan chrome yang "fixed"
+   supaya tidak ikut membesar/bergeser. Muncul lagi saat zoom normal. */
+.nav,
+.ask-fab {
+  transition: opacity 0.18s ease;
+}
+body.zoomed .nav,
+body.zoomed .ask-fab {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .sheet-backdrop {
   position: fixed;
   inset: 0;
