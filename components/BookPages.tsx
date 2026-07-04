@@ -12,10 +12,12 @@ function ZoomViewer({
   pages,
   start,
   onClose,
+  crop,
 }: {
   pages: string[];
   start: number;
   onClose: () => void;
+  crop?: boolean;
 }) {
   const [idx, setIdx] = useState(start);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -127,7 +129,7 @@ function ZoomViewer({
   };
 
   return (
-    <div className="viewer" role="dialog" aria-modal="true">
+    <div className={`viewer${crop ? " crop-top" : ""}`} role="dialog" aria-modal="true">
       <button className="viewer-close" onClick={onClose} aria-label="Tutup">
         <Icon name="close" size={22} />
       </button>
@@ -162,11 +164,11 @@ function ZoomViewer({
   );
 }
 
-export default function BookPages({ pages }: { pages: string[] }) {
+export default function BookPages({ pages, crop }: { pages: string[]; crop?: boolean }) {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <>
-      <div className="book-pages">
+      <div className={`book-pages${crop ? " crop-top" : ""}`}>
         {pages.map((src, i) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -182,7 +184,7 @@ export default function BookPages({ pages }: { pages: string[] }) {
           <Icon name="zoom" size={15} /> Ketuk halaman untuk memperbesar
         </p>
       </div>
-      {open !== null && <ZoomViewer pages={pages} start={open} onClose={() => setOpen(null)} />}
+      {open !== null && <ZoomViewer pages={pages} start={open} onClose={() => setOpen(null)} crop={crop} />}
     </>
   );
 }

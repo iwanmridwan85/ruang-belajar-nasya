@@ -60,7 +60,7 @@ export default function TopicPage({ params }: { params: { subject: string; code:
           <p className="para">Halaman buku belum tersedia untuk topik ini.</p>
         </div>
       ) : (
-        <BookPages pages={bookPages} />
+        <BookPages pages={bookPages} crop={params.subject === "matematika"} />
       )}
 
       {params.subject === "matematika" && hasTopicQuiz(topic.code) && (
