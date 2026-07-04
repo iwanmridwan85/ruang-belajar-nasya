@@ -9,3 +9,7 @@
 .env*.local
 npm-debug.log*
 next-env.d.ts
+
+# TypeScript incremental build info
+tsconfig.tsbuildinfo
+*.tsbuildinfo
