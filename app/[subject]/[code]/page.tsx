@@ -4,6 +4,7 @@ import { getTopic, getAdjacentTopics, getSubjectMeta, loadTopics, SUBJECTS } fro
 import { pageImages } from "@/lib/format";
 import { hasTopicQuiz, hasLevelQuiz } from "@/lib/quiz";
 import ReaderClient from "@/components/ReaderClient";
+import BookPages from "@/components/BookPages";
 import Icon from "@/components/Icon";
 
 export function generateStaticParams() {
@@ -54,27 +55,13 @@ export default function TopicPage({ params }: { params: { subject: string; code:
         {unitLabel} · Semester {topic.semester}
       </div>
 
-      <div className="book-pages">
-        {bookPages.length === 0 ? (
+      {bookPages.length === 0 ? (
+        <div className="book-pages">
           <p className="para">Halaman buku belum tersedia untuk topik ini.</p>
-        ) : (
-          <>
-            {bookPages.map((src, i) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={src}
-                src={src}
-                alt={`Halaman buku ${i + 1}`}
-                loading={i < 2 ? "eager" : "lazy"}
-                className="book-page"
-              />
-            ))}
-            <p className="book-hint">
-              <Icon name="zoom" size={15} /> Cubit layar untuk memperbesar halaman
-            </p>
-          </>
-        )}
-      </div>
+        </div>
+      ) : (
+        <BookPages pages={bookPages} />
+      )}
 
       {params.subject === "matematika" && hasTopicQuiz(topic.code) && (
         <Link href={`/latihan/${params.subject}/${topic.code.toLowerCase()}`} className="latihan-launch" style={{ marginTop: 18 }}>
